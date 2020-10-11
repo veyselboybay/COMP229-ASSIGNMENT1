@@ -3,16 +3,23 @@
 
    
 
-    <!-- Main Content-->
-    <main>
+    <!-- Main Content
+    
+      <main>
       <div class="jumbotron">
         <h1 class="display-4">Welcome to the <%= title %> Page</h1>
       </div>
 
       
     </main>
+    -->
+  
     <%
-        if(title=="Contact"){%> <h1>hey guys you can contact me!</h1> <%}
+        if(title=="Home"){%> <% include main_content/home_content.ejs%> <%}
+        if(title=="Contact"){%> <% include main_content/contact_content.ejs%> <%}
+        if(title=="Services"){%> <% include main_content/services_content.ejs%> <%}
+        if(title=="Projects"){%> <% include main_content/projects_content.ejs%> <%}
+        if(title=="About"){%> <% include main_content/about_content.ejs%> <%}
     %>
   
   <% include partials/bottom_nav.ejs %>
