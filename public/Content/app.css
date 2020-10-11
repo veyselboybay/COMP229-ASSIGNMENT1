@@ -12,6 +12,18 @@ body,html{
   background-attachment:fixed;
   background-size:100% 100%;
 }
-.guys{
-  color:pink;
+
+#home_pp{
+  width:100px;
+  height:100px;
+  margin-left:580px;
+  margin-top:100px;
+  border:1px solid black;
+  border-radius:60px;
+  
+}
+
+#home_info{
+  color:white;
+  text-align: center;
 }
