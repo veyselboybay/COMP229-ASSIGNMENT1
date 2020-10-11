@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+<% include partials/main_nav.ejs %>
+
+   
+
+    <!-- Main Content-->
+    <main>
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to the <%= title %> Page</h1>
+      </div>
+
+      
+    </main>
+    <%
+        if(title=="Contact"){%> <h1>hey guys you can contact me!</h1> <%}
+    %>
+  
+  <% include partials/bottom_nav.ejs %>
+  <% include partials/footer.ejs %>
+
