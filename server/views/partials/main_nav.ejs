@@ -38,6 +38,13 @@
           </li>
 
           <%
+            if(title=="Contacts"){%> <li class="nav-item active"> <%}
+            else{%> <li class="nav-item"> <%}
+          %>
+            <a class="nav-link" href="/contact-list"><i class="fas fa-address-book"></i> Contact List </a>
+          </li>
+
+          <%
             if(title=="Services"){%> <li class="nav-item active"> <%}
             else{%> <li class="nav-item"> <%}
           %>

@@ -1,5 +1,5 @@
-<% include partials/header.ejs %>
-<% include partials/main_nav.ejs %>
+<% include ../partials/header.ejs %>
+<% include ../partials/main_nav.ejs %>
 
 
 <main class="container">
@@ -11,6 +11,8 @@
                     <th class="text-center">Name</th>
                     <th class="text-center">Contact Number</th>
                     <th class="text-center">Email Address</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 <% 
                     for(let count=0;count<ContactList.length;count++)
@@ -19,13 +21,21 @@
                             <td class="text-center"><%= ContactList[count].name %></td>
                             <td class="text-center"><%= ContactList[count].number %></td>
                             <td class="text-center"><%= ContactList[count].email %></td>
+                            <td class="text-center"><a href="/contact-list/edit/<%=ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                              <i class="fas fa-pencil_alt">Edit</i>  
+                            </a></td>
+                            <td class="text-center"><a href="/contact-list/delete/<%=ContactList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">Remove</i></a></td>
                         </tr>
                     <%}
                 %> 
             </table>
+            <div class="col-md-12 text-right">
+                <a href="/contact-list/add" class="btn btn-primary"><i class="fas fa-plus-circle">Add Contact</i></a>    
+            </div>
+            
         </div>
     </div>
 </main>
 
-<% include partials/bottom_nav.ejs %>
-<% include partials/footer.ejs %>
+<% include ../partials/bottom_nav.ejs %>
+<% include ../partials/footer.ejs %>

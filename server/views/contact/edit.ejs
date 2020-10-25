@@ -1,0 +1,34 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/main_nav.ejs %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form method="POST" class="form">
+                <div class="form-group">
+                    <label for="nameTextField">Contact Name</label>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter person's name here" name="name" value="<%= contact.name %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numberTextField">Contact Number</label>
+                    <input type="text" class="form-control" id="numberTextField" placeholder="Enter person's number here" name="number" value="<%= contact.number %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailTextField">Contact Email</label>
+                    <input type="text" class="form-control" id="emailTextField" placeholder="Enter person's email here" name="email" value="<%= contact.email %>" required>
+                </div>
+                <div class="col-md-12 text-right">
+                    <button type="submit" class="btn btn-primary">Complete</button> 
+                 </div>
+            </form>
+            
+      
+    </div>
+</div>
+
+<% include ../partials/bottom_nav.ejs %>
+<% include ../partials/footer.ejs %>
