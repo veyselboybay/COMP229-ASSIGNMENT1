@@ -16,5 +16,8 @@
     "jquery": "^3.5.1",
     "morgan": "~1.9.1",
     "poppers.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "mongoose": "^5.10.10"
   }
 }
