@@ -51,6 +51,21 @@
             <a class="nav-link" href="/services"><i class="fas fa-cogs"></i> Services </a>
           </li>
 
+          <%
+            if(typeof displayName =='string' && displayName)
+            {
+              %>
+                <li class="navbar-text"><i class="fas fa-lg fa-user"></i><%= displayName %></li>
+                <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+              <%
+            }
+            else
+            {
+              %>
+                <li class="nav-item"><a href="/login" class="nav-link"><i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+              <%
+            }
+          %>
 
           
 

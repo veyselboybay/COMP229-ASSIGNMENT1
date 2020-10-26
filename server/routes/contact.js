@@ -1,8 +1,19 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+let passport = require('passport');
 
 let Contact = require('../models/contact');
+
+// helper function
+function requireAuth(req,res,next)
+{
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
 
 router.get('/',(req,res,next) => {
     Contact.find((err,contactList) => {
@@ -12,14 +23,14 @@ router.get('/',(req,res,next) => {
         }
         else
         {
-            res.render('contact/list',{title:'Contacts',ContactList:contactList});
+            res.render('contact/list',{title:'Contacts',displayName:req.user?req.user.displayName:'',ContactList:contactList});
         }
     });
 });
 
 // display add page
-router.get('/add',(req,res,next) => {
-    res.render('contact/add',{title:'Adding New Contact'});
+router.get('/add',requireAuth,(req,res,next) => {
+    res.render('contact/add',{title:'Adding New Contact',displayName:req.user?req.user.displayName:''});
 });
 
 
@@ -46,7 +57,7 @@ router.post('/add',(req,res,next) => {
 
 // display edit page
 
-router.get('/edit/:id',(req,res,next) => {
+router.get('/edit/:id',requireAuth,(req,res,next) => {
     let id=req.params.id;
     Contact.findById(id,(err,contactToEdit) => {
         if(err)
@@ -56,14 +67,14 @@ router.get('/edit/:id',(req,res,next) => {
         }
         else
         {
-            res.render('contact/edit',{title:'Edit Contact',contact:contactToEdit});
+            res.render('contact/edit',{title:'Edit Contact',displayName:req.user?req.user.displayName:'',contact:contactToEdit});
         }
     });
 });
 
 // process edit page
 
-router.post('/edit/:id',(req,res,next) => {
+router.post('/edit/:id',requireAuth,(req,res,next) => {
     let id=req.params.id;
     let updatedContact = Contact({
         "_id":id,
@@ -87,7 +98,7 @@ router.post('/edit/:id',(req,res,next) => {
 
 // Deleting contact
 
-router.get('/delete/:id',(req,res,next) => {
+router.get('/delete/:id',requireAuth,(req,res,next) => {
     let id= req.params.id;
 
     Contact.remove({_id:id},(err) => {

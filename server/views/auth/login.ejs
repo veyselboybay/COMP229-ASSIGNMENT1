@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/main_nav.ejs %>
+
+    <div class="loginAll">
+        <% 
+            if(messages.length>0)
+            {%>
+                <div class="alert alert-danger"><%= messages %></div>
+            <%}    
+        %> 
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3><%= title %> Here</h3>
+                    <form method="POST" autocomplete="off">
+                        <div class="form-group">
+                            <label for="username"><i class="fas fa-user"></i> Username:</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Your username *" autofocus required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="fas fa-key"></i> Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Your Password *" autofocus required/>
+                            or
+                        <a href="/register" >Register Here</a>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<% include ../partials/bottom_nav.ejs %>
+<% include ../partials/footer.ejs %>

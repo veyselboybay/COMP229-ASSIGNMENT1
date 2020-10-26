@@ -11,8 +11,16 @@
                     <th class="text-center">Name</th>
                     <th class="text-center">Contact Number</th>
                     <th class="text-center">Email Address</th>
-                    <th></th>
-                    <th></th>
+                   
+                    <%
+                        if(typeof displayName == 'string' && displayName)
+                        {
+                            %>
+                                <th></th>
+                                <th></th>
+                            <%
+                        }
+                    %>
                 </tr>
                 <% 
                     for(let count=0;count<ContactList.length;count++)
@@ -21,17 +29,33 @@
                             <td class="text-center"><%= ContactList[count].name %></td>
                             <td class="text-center"><%= ContactList[count].number %></td>
                             <td class="text-center"><%= ContactList[count].email %></td>
-                            <td class="text-center"><a href="/contact-list/edit/<%=ContactList[count]._id %>" class="btn btn-primary btn-sm">
-                              <i class="fas fa-pencil_alt">Edit</i>  
+                        <%
+                        if(typeof displayName == 'string' && displayName)
+                        {
+                            %>
+                            <td class="text-center" title="Edit data"><a href="/contact-list/edit/<%=ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i>  
                             </a></td>
-                            <td class="text-center"><a href="/contact-list/delete/<%=ContactList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">Remove</i></a></td>
-                        </tr>
+                            <td class="text-center" title="Delete data"><a href="/contact-list/delete/<%=ContactList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></td>
+                        
+                            <%
+                        }
+                        %>
+                            </tr>
                     <%}
                 %> 
             </table>
-            <div class="col-md-12 text-right">
-                <a href="/contact-list/add" class="btn btn-primary"><i class="fas fa-plus-circle">Add Contact</i></a>    
-            </div>
+                    <%
+                        if(typeof displayName == 'string' && displayName)
+                        {
+                            %>
+                            <div class="col-md-12 text-right">
+                                <a href="/contact-list/add" class="btn btn-primary"><i class="fas fa-plus-circle">Add Contact</i></a>    
+                            </div>
+                            <%
+                        }
+                    %>
+            
             
         </div>
     </div>

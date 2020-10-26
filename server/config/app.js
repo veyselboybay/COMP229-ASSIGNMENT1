@@ -5,6 +5,16 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let contactsRouter = require('../routes/contact');
 
+// Modules for authentication
+
+let session = require('express-session');
+let passport = require('passport');
+let passportlocal = require('passport-local');
+let localStrategy = passport.Strategy;
+let flash = require('connect-flash');
+
+
+
 // MongoDB connection configuration
 let mongoose= require('mongoose');
 let DB = require('./db');
@@ -28,6 +38,32 @@ let app = express();
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
+
+// Setup express session
+
+app.use(session({
+  secret:"Some Secret",
+  saveUninitialized:false,
+  resave:false
+}));
+
+// Initialize flash
+app.use(flash());
+
+// Initialize Passport
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// usermodel instance
+
+let userModel = require('../models/user');
+let User = userModel.User;
+passport.use(User.createStrategy());
+
+// serialize and deserialize user info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use(logger('dev'));
 app.use(express.json());
