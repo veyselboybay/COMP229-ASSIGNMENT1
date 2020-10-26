@@ -2,32 +2,33 @@
 <% include ../partials/main_nav.ejs %>
 
 
+
+
+
 <div class="container">
-    <div class="row">
-        <div class="offset-md-3 col-md-6">
-            <h1><%= title %></h1>
-            <form method="POST" class="form">
-                <div class="form-group">
-                    <label for="nameTextField">Contact Name</label>
-                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter person's name here" name="name" value="<%= contact.name %>" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="numberTextField">Contact Number</label>
-                    <input type="text" class="form-control" id="numberTextField" placeholder="Enter person's number here" name="number" value="<%= contact.number %>" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="emailTextField">Contact Email</label>
-                    <input type="text" class="form-control" id="emailTextField" placeholder="Enter person's email here" name="email" value="<%= contact.email %>" required>
-                </div>
-                <div class="col-md-12 text-right">
-                    <button type="submit" class="btn btn-primary">Complete</button> 
-                 </div>
-            </form>
-            
-      
-    </div>
+    <form method="POST" class="form container text-center">
+        <h1 class="text-center"><%= title %></h1>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Contact Name</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Contact Email</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr>
+                <td><input type="text" class="form-control text-center" id="nameTextField" placeholder="Enter person's name here" name="name" value="<%= contact.name %>" required></td>
+                <td><input type="text" class="form-control text-center" id="numberTextField" placeholder="Enter person's number here" name="number" value="<%= contact.number %>" required></td>
+                <td><input type="text" class="form-control text-center" id="emailTextField" placeholder="Enter person's email here" name="email" value="<%= contact.email %>" required></td>
+              
+            </tbody>
+          </table>
+          <div class="col-md-12 text-right">
+              <label for="submitButton"><strong>Click here to Confirm</strong></label>
+            <button type="submit" class="btn btn-success" id="submitButton"><i class="far fa-check-circle fa-lg"></i></button> 
+         </div>
+    </form>
 </div>
 
 <% include ../partials/bottom_nav.ejs %>
