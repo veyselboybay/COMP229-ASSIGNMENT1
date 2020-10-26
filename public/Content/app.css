@@ -93,3 +93,10 @@ body,html{
   font-weight: 600;
   text-decoration: none;
 }
+
+/* Contact List page */
+
+.contactList{
+  margin-right: auto;
+  margin-left:auto;
+}

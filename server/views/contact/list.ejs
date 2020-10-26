@@ -2,10 +2,10 @@
 <% include ../partials/main_nav.ejs %>
 
 
-<main class="container">
+<main class="container" >
     <div class="row">
-        <div class="col-md-offset-3 col-md-8">
-            <h1><%= title %></h1><br>
+        <div class="col-md-offset-3 col-md-8 contactList" >
+            <h1 class="text-center">Contact Informations</h1><br>
             <table class="table">
                 <tr class="thead-dark text-center">
                     <th scope="col">Name</th>
@@ -34,9 +34,9 @@
                         {
                             %>
                             <td class="text-center" title="Edit data"><a href="/contact-list/edit/<%=ContactList[count]._id %>" class="btn btn-primary btn-sm">
-                            <i class="fas fa-pencil-alt"></i>  
+                            <i class="fas fa-user-edit"></i>  
                             </a></td>
-                            <td class="text-center" title="Delete data"><a href="/contact-list/delete/<%=ContactList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></td>
+                            <td class="text-center" title="Delete data"><a href="/contact-list/delete/<%=ContactList[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-user-times"></i></a></td>
                         
                             <%
                         }
@@ -50,7 +50,7 @@
                         {
                             %>
                             <div class="col-md-12 text-right">
-                                <a href="/contact-list/add" class="btn btn-primary"><i class="fas fa-plus-circle">Add Contact</i></a>    
+                                <a href="/contact-list/add" class="btn btn-success"><i class="fas fa-plus-circle"> Add Contact</i></a>    
                             </div>
                             <%
                         }

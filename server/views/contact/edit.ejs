@@ -21,13 +21,24 @@
                 <td><input type="text" class="form-control text-center" id="nameTextField" placeholder="Enter person's name here" name="name" value="<%= contact.name %>" required></td>
                 <td><input type="text" class="form-control text-center" id="numberTextField" placeholder="Enter person's number here" name="number" value="<%= contact.number %>" required></td>
                 <td><input type="text" class="form-control text-center" id="emailTextField" placeholder="Enter person's email here" name="email" value="<%= contact.email %>" required></td>
-              
+              </tr>
+              <tr>
+                <td>
+                    <div class="col-md-12 text-left">
+                        <a href="/contact-list" class="btn btn-warning"><i class="fas fa-chevron-circle-left"></i> Return</a>
+                   </div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="col-md-12 text-right">
+                        <label for="submitButton"><strong>Click here to Confirm</strong></label>
+                      <button type="submit" class="btn btn-success" id="submitButton"><i class="far fa-check-circle fa-lg"></i></button> 
+                   </div>
+                </td>
+            </tr>
             </tbody>
           </table>
-          <div class="col-md-12 text-right">
-              <label for="submitButton"><strong>Click here to Confirm</strong></label>
-            <button type="submit" class="btn btn-success" id="submitButton"><i class="far fa-check-circle fa-lg"></i></button> 
-         </div>
+          
     </form>
 </div>
 

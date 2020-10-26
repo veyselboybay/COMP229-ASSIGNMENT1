@@ -30,7 +30,7 @@ router.get('/',(req,res,next) => {
 
 // display add page
 router.get('/add',requireAuth,(req,res,next) => {
-    res.render('contact/add',{title:'Adding New Contact',displayName:req.user?req.user.displayName:''});
+    res.render('contact/add',{title:'Adding a New Contact',displayName:req.user?req.user.displayName:''});
 });
 
 
