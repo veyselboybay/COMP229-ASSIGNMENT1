@@ -1,13 +1,13 @@
 {
-  "name": "assignment1",
+  "name": "assignment-1",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
   },
   "engines": {
-    "node":"^12.18.3",
-    "npm":"^6.0.0"
+    "node": "^12.18.3",
+    "npm": "^6.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -34,5 +34,17 @@
     "@types/passport": "^1.0.4",
     "@types/passport-local-mongoose": "^4.0.13",
     "mongoose": "^5.10.10"
-  }
+  },
+  "description": "assignment2",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veyselboybay/COMP229-ASSIGNMENT1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veyselboybay/COMP229-ASSIGNMENT1/issues"
+  },
+  "homepage": "https://github.com/veyselboybay/COMP229-ASSIGNMENT1#readme"
 }
