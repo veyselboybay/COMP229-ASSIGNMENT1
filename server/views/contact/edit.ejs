@@ -8,7 +8,7 @@
 <div class="container">
     <form method="POST" class="form container text-center">
         <h1 class="text-center"><%= title %></h1>
-        <table class="table">
+        <table class="table" >
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Contact Name</th>
@@ -18,9 +18,9 @@
             </thead>
             <tbody >
               <tr>
-                <td><input type="text" class="form-control text-center" id="nameTextField" placeholder="Enter person's name here" name="name" value="<%= contact.name %>" required></td>
-                <td><input type="text" class="form-control text-center" id="numberTextField" placeholder="Enter person's number here" name="number" value="<%= contact.number %>" required></td>
-                <td><input type="text" class="form-control text-center" id="emailTextField" placeholder="Enter person's email here" name="email" value="<%= contact.email %>" required></td>
+                <td><input type="text" class="form-control text-center" id="nameTextField" placeholder="Enter person's name here" name="name" value="<%= contact.name %>" required autocomplete="off"></td>
+                <td><input type="text" class="form-control text-center" id="numberTextField" placeholder="Enter person's number here" name="number" value="<%= contact.number %>" required autocomplete="off"></td>
+                <td><input type="text" class="form-control text-center" id="emailTextField" placeholder="Enter person's email here" name="email" value="<%= contact.email %>" required autocomplete="off"></td>
               </tr>
               <tr>
                 <td>
